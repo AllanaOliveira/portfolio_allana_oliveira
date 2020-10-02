@@ -23,12 +23,12 @@ import sys
 
 ## e que seu manage.py está em '/home/UFFCarlosRibeiro/projeto/manage.py'
 
-path = 'D:\Allan\Documents\Projetos Django\portfolio\portfolio\projeto'
+path = '/home/oliveiraallana/portfolio_allana_oliveira'
 if path not in sys.path:
 
     sys.path.append(path)
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'produto.prod'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'projeto.prod'
 
 from django.core.wsgi import get_wsgi_application
 
