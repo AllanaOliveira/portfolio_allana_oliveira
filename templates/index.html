@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block corpo %}
+          <img src="{% static 'images/allana.png' %}" class="img-fluid nome" alt="Foto da Allana Oliveira dentro de um círculo e ao lado direito o nome Allana Oliveira">
+          <p class="container apresentacao text-justify">Sejam bem-vind@s ao meu portfólio! Aqui você irá conhecer um pouquinho mais sobre mim e o que enche meu coração de alegria. Fique a vontade!</p>
+          <div class="menus">
+            <a href="{% url 'pais:index' %}"><img src="{% static 'images/mundo.gif' %}" class="img-fluid mundo" alt="Mundo girando - Link para projetos sobre países"></a>
+            <div class="ciencia_da_computacao">
+              <div class="img_computacao">
+                <img class="img-fluid" src="{% static 'images/computador.png' %}" alt="Computador com uma lâmpada saindo dele">
+              </div>
+              <div class="text_menu">
+                <p class="text-justify">Sou formada em Ciência da Computação pela Universidade Federal Fluminense (2016-2020) e apaixonada por Design que deu início ao projeto da Shine Design.
+                  <button type="link" class="btn btn-light btn-sm">Saiba mais</button>
+                </p>
+              </div>
+            </div>
+            <div class="missoes">
+              <div class="img_mapa">
+                <img class="img-fluid" src="{% static 'images/mapa.png' %}" alt="Um mapa com um pin soltando dele">
+              </div>
+              <div class="text_menu">
+                <p class="text-justify">Possuo um amor maior que eu por almas e por isso decidi viver a missão de Deus para a minha vida.
+                  <button type="link" class="btn btn-light btn-sm">Saiba mais</button>
+                </p>
+              </div>
+            </div>
+          </div>
+    {% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/pais.css' %}" type="text/css">
+{% endblock %}
+
+{% block titulo %}
+    Países
+{% endblock %}
+
+{% block corpo %}
+<h3 class="text-center">{{pais.nome}} ({{pais.sigla}})</h3>
+<img class="img-fluid img_pais" src="{{ pais.imagem.url }}" alt="Bandeira do país {{ pais.nome }}">
+<div class="form-group row">
+    <div class="col-sm-3">
+        <h6>Continente</h6><p> {{pais.continente}}</p>
+    </div>
+    <div class="col-sm-3">
+        <h6>Capital</h6><p> {{pais.capital}} ({{pais.capital_sigla}})</p>
+    </div>
+    <div class="col-sm-3">
+        <h6>População</h6><p>{{pais.populacao}}</p>
+    </div>
+    <div class="col-sm-3">
+        <h6>Cristãos</h6><p>{{pais.cristaos}}</p>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-sm-6">
+        <h6>Religião</h6>
+        <ul>
+            {% for religiao in religioes %}
+                <li>
+                    <a href="#" data-trigger="hover" data-toggle="tooltip" data-placement="top" data-html="true" title="{{religiao.religiao.descricao}}">
+                        {{religiao.religiao.nome}}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-sm-6">
+        <h6>Idioma</h6>
+        <ul>
+            {% for idioma in idiomas %}
+                <li>{{idioma.idioma.nome}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% if pais.perseguido_id %}
+    <div class="form-group row">
+        <div class="col-sm-12">
+             <h6>Perseguição</h6><p class="text-justify">{{pais.perseguido.tipo}} - {{pais.perseguido.descricao}}</p>
+        </div>
+    </div>
+{% endif %}
+
+<div class="form-group row">
+    <div class="col-sm-6">
+        <h6>Clima</h6><p class="text-justify">{{pais.clima}}</p>
+    </div>
+    <div class="col-sm-6">
+        <h6>Moeda {{pais.moeda.nome}}</h6>
+        <img class="img-fluid moeda" src="{{ pais.moeda.imagem.url }}" alt="Moeda do país {{ pais.nome }}">
+    </div>
+</div>
+<h6>Curiosidades</h6><p class="text-justify">{{pais.curiosidades}}</p>
+<h6>História</h6><p class="text-justify">{{pais.historia}}</p>
+<div class="form-group row">
+    <div class="col-sm-12">
+        <h6>Turismo</h6>
+        {% for turismo in turismos %}
+            <div class="col-sm-6">
+                <p style="padding-left: 100px;"><strong>{{turismo.nome}}</strong></p>
+                <img style="padding-right: 20px;" align="left" class="img-fluid turismo" src="{{ turismo.imagem.url }}" alt="{{ turismo.nome }}">
+                <p class="text-justify" style="align: right; padding: 20px;">{{turismo.descricao}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<h6>Atualizado em:</h6><p>{{pais.atualizado_em}}</p>
+{% endblock %}

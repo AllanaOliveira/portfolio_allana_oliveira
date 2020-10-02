@@ -1,0 +1,132 @@
+body{
+    background-color: #c0ebff;
+}
+
+.esquerda {
+    float: right;
+    padding-left: 80px;
+}
+
+.direita {
+    padding-right: 100px;
+}
+
+.nav-item {
+    padding: 10px;
+}
+
+.nav-item i {
+    color: black;
+}
+
+.hastag {
+    float: right;
+    padding-right: 50px;
+}
+
+.nome {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50%;
+    width: 50%;
+}
+
+.apresentacao {
+    font-family: 'Courier New', Courier, monospace;
+    width: 50%;
+}
+
+footer {
+    background-color: #474A51;
+    position: relative;
+    bottom: 0;
+    color: white;
+}
+
+footer p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.mundo {
+    padding-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25%;
+    width: 25%;
+}
+
+.principal {
+    height: 90%;
+    margin-top: 50px;
+    padding: 40px;
+}
+
+.ciencia_da_computacao {
+    display: table;
+}
+
+.missoes {
+    display: table;
+}
+
+.ciencia_da_computacao img{
+    width: 150px;
+}
+
+.missoes img{
+    width: 150px;
+}
+
+.img_computacao {
+    display: table-cell;
+    float: left;
+}
+
+.text_menu {
+    display: table-cell;
+    float: left;
+    width: 300px;
+    margin-top: 50px;
+}
+
+.img_mapa {
+    display: table-cell;
+    float: right;
+}
+
+.menus div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 1023px){
+ .direita {
+    padding-right: 0;
+ }
+ .nome {
+    height: 100%;
+    width: 100%;
+ }
+ .apresentacao {
+    width: 100%;
+ }
+ .mundo {
+    height: 50%;
+    width: 50%;
+    padding-top: 10px;
+ }
+ .ciencia_da_computacao {
+    width: 100%;
+ }
+ .missoes {
+    width: 100%;
+}
+ .text_menu {
+    width: 200px;
+    margin: 10px;
+ }
+   .margin: 0;
+}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}
+    Países
+{% endblock %}
+
+{% block corpo %}
+<h2 class="text-center">Países</h2>
+<div class="row">
+    {% for pais in paises %}
+        <div class="col-xl-3 col-lg-3 col-6">
+            <div class="card">
+                <div class="card-body">
+                    {% if pais.imagem %}
+                        <img class="img-fluid" src="{{ pais.imagem.url }}" alt="Bandeira do país {{ pais.nome }}">
+                    {% else %}
+                        <div class="text md-center mb-md-8 mb-2">
+                            Imagem não disponível
+                        </div>
+                    {% endif %}
+                    <h5 class="text-center"><a class="card-title" href="{% url 'pais:show' pais.id %}">{{ pais.nome }}</a></h5>
+                    <p class="card-text text-center text-justify">{{ pais.continente }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

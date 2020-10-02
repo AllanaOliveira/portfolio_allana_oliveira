@@ -1,0 +1,24 @@
+.img_pais {
+    padding: 20px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.moeda {
+    width: 100px;
+}
+
+.turismo {
+    width: 400px;
+}
+
+@media only screen and (max-width: 1023px){
+    .img_pais {
+        width: 70%;
+    }
+    .h3 {
+        font-size: 6px;
+    }
+}

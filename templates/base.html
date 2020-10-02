@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block titulo %}
+            Allana Oliveira
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/template.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+
+    {% block link %}
+
+    {% endblock %}
+
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+    <script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/template.js' %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light navbar-expand-md fixed-top cabecalho">
+        <a class="nav-link nav-item d-flex justify-content-center" href="/" target="_blank"><i class="fas fa-door-open"></i></a>
+
+          <div class="navbar-nav mr-auto esquerda d-none d-md-block">
+              <a class="d-none d-md-block nav-link nav-item" href="https://wa.me/5521996667273" target="_blank"><i class="far fa-comments"></i> Entre em contato!</a>
+          </div>
+          <div class="navbar-nav esquerda mr-auto d-block d-md-none">
+              <a class="d-block d-md-none nav-link nav-item" href="https://wa.me/5521996667273" target="_blank"><i class="far fa-comments fa-2x"></i></a>
+          </div>
+
+            <div class="navbar-nav mr-auto direita">
+              <div class="row">
+                <a class="nav-link nav-item d-flex justify-content-center small mr-2" href="https://www.instagram.com/oliveira_allana/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a class="nav-link nav-item d-flex justify-content-center small mr-2" href="https://www.facebook.com/Allana.C.deoliveira" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a class="nav-link nav-item d-flex justify-content-center small mr-2" href="https://www.youtube.com/user/AllaanaGodislove" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+            </div>
+            </div>
+            <div class="navbar-nav">
+                <a class="d-none d-md-block nav-link nav-item hastag" href="#"><i class="fas fa-hashtag"></i><span>juntospelomundo</span></a>
+            </div>
+      </nav>
+
+ <main class="principal">
+
+    {% block corpo %}
+
+    {% endblock %}
+ </main>
+
+    <footer class="rodape">
+    <div class="text-center py-3">
+      <p>Allana Capistrano de Oliveira</p>
+      <p>CPF: 148.264.797-43</p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <p>Banco do Brasil</p>
+          <p>Agência: 0000</p>
+          <p>Conta</p>
+        </div>
+        <div class="col text-center">
+          <p>Banco Itaú</p>
+          <p>Agência: 0000</p>
+          <p>Conta</p>
+        </div>
+      </div>
+    </div>
+    <hr style="border-color: #7bac3b;">
+    <div class="footer-copyright text-center py-3">
+      <p><i class="far fa-copyright"></i> Allana Capistrano de Oliveira 2020</p>
+      <p><i class="fas fa-globe-americas"></i> Todos os direitos reservados</p>
+    </div>
+  </footer>
+</body>
+</html>
