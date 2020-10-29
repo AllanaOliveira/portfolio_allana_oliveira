@@ -25,7 +25,7 @@ SECRET_KEY = 'o(awsoob#ia@4847nt^rhf7n@ouwm3h3%og#cc1d%d@^k%bpvr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['oliveiraallana.pythonanywhere.com']
 
 
 # Application definition
@@ -120,10 +120,7 @@ DATE_INPUT_FORMATS = ['%d/%m/%Y']
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATIC_ROOT = '/home/oliveiraallana/portfolio_allana_oliveira/static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
