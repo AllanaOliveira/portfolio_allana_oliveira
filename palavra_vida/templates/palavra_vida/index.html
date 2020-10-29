@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/palavra_vida.css' %}" type="text/css">
+{% endblock %}
+
+{% block titulo %}
+    Palavras de Vida
+{% endblock %}
+
+{% block corpo %}
+<a role="button" class="btn btn-primary insert" href="{% url 'palavra_vida:cadastra_motivacao' %}">Inserir Motivação</a>
+<h3 class="font-weight-bold text-center">Palavras de Vida</h3>
+
+<div class="container">
+    <section id="motivacao-container">
+        <div id="carousel-motivacao" class="carousel slide wrapper" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-id" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-id" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    {% for palavra_vida in palavras_vida %}
+                        <div class="motivacao-box">
+                            <p class="motivacao-msg">{{ palavra_vida.motivacao }}</p>
+                            <img src="{% static 'images/avatar/'|add:palavra_vida.avatar.imagem %}">
+                            <p class="motivacao-name font-weight-bold">{{ palavra_vida.nome }}</p>
+                            <p class="motivacao-localidade">{{ palavra_vida.localidade }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-ec74ce28-d36a-48eb-b599-c4ae7eed6ea8"></div>
+{% endblock %}

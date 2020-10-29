@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/palavra_vida.css' %}" type="text/css">
+{% endblock %}
+
+{% block titulo %}
+    Cadastro de Palavra de Vida
+{% endblock %}
+
+{% block corpo %}
+<div class="mb-4" style="padding-top: 20px;">
+    <h3 class="font-weight-bold text-center">Cadastro de Palavra de Vida</h3>
+</div>
+
+<form action="" method="POST" class="pb-4" novalidate>
+    <div class="row mb-xl-3">
+        <div class="col-xl-12 mb-3">
+            <div class="row">
+                <label for="id_avatar" class="col-xl-2 font-weight-bold">Avatar</label>
+                <div class="col-xl-10">
+                    <div class="form-inline avatar-imagem">
+                        {% for avatar in avatares %}
+                            <input type="radio" id="{{ avatar.id }}" name="avatar" value="{{ avatar.id }}">
+                            <label for="{{ avatar.id }}"><img src="{% static 'images/avatar/'|add:avatar.imagem %}"></label><br>
+                        {% endfor %}
+                    </div>
+                    {% if form.avatar.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                            {% for error in form.avatar.errors %}
+                                <small>{{ error }}</small>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12 mb-3">
+            <div class="row">
+                <label for='id_nome' class="col-xl-2 font-weight-bold">Nome</label>
+                <div class="col-xl-10">
+                    {{ form.nome }}
+                    {% if form.nome.errors %}
+                    <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                        {% for error in form.nome.errors %}
+                        <small>{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12 mb-3">
+            <div class="row">
+                <label for="id_motivacao" class="col-xl-2 font-weight-bold">Motivação</label>
+                <div class="col-xl-10">
+                    {{ form.motivacao }}
+                     {% if form.motivacao.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                            {% for error in form.motivacao.errors %}
+                                <small>{{ error }}</small>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-12 mb-3">
+            <div class="row">
+                <label for="id_localidade" class="col-xl-2 font-weight-bold">Localidade</label>
+                <div class="col-xl-10">
+                    {{ form.localidade }}
+                     {% if form.localidade.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                            {% for error in form.localidade.errors %}
+                                <small>{{ error }}</small>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-xl-6">
+                <div class="row">
+                    <div class="col-xl-10 offset-xl-2">
+                        {% csrf_token %}
+                        <button id="botao" type="submit" class="btn btn-primary">
+                            Cadastrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
