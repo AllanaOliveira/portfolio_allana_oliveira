@@ -23,7 +23,7 @@ import sys
 
 ## e que seu manage.py está em '/home/UFFCarlosRibeiro/projeto/manage.py'
 
-path = '/home/oliveiraallana/portfolio_allana_oliveira'
+path = '/home/AllanaOliveira/portfolio_allana_oliveira'
 if path not in sys.path:
 
     sys.path.append(path)
