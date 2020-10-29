@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/conquista.css' %}" type="text/css">
+{% endblock %}
+
+{% block titulo %}
+    Linha do Tempo
+{% endblock %}
+
+{% block corpo %}
+<h2 class="text-center">Conquistas</h2>
+<div class="row">
+  <div class="container timeline-container">
+    <div class="timeline">
+      <ul>
+        {% for item in linhas_do_tempo %}
+          <li>
+            <div class="timeline-content">
+              <h2 class="date">{{ item.definir_mes }} de {{ item.data.year }}</h2>
+              <h1>{{ item.titulo }}</h1>
+              <p class="text-justify">{{ item.descricao }}</p>
+              <p><strong>{{ item.localidade }}</strong></p>
+              <div class="botoes">
+                {% if item.link %}
+                  <a href="{{ item.link }}" type="link" class="btn btn-outline-light btn-sm" target="_blank">Saiba mais</a>
+                {% endif %}
+                {% if item.documento %}
+                  <a href="{{ item.documento.url }}" type="link" class="btn btn-light btn-sm">Veja!</a>
+                {% endif %}
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
