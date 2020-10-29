@@ -1,0 +1,80 @@
+/* testemunhos container */
+#motivacao-container {
+    background-color: transparent;
+    padding-top: 20px;
+}
+
+#motivacao-container p {
+    color: #000000;
+    text-align: center;
+}
+
+#motivacao-container p{
+    margin-bottom: 10px;
+}
+
+.motivacao-box img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #CCC;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.motivacao-box {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+
+.motivacao-localidade {
+    padding-bottom: 40px;
+}
+
+#motivacao-container .motivacao-box .motivacao-msg {
+    background-color: #FFF;
+    color: #666;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 80%;
+    position: relative;
+    margin: 35px auto;
+    font-style: italic;
+}
+
+.motivacao-msg:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #FFF;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.insert {
+    float: right;
+}
+
+.avatar-imagem img{
+    width: 60px;
+    height: 60px;
+}
+
+.avatar-imagem {
+   margin-right: 10px;
+}
+
+@media only screen and (max-width: 1023px){
+    .motivacao-box {
+        width: 100%;
+    }
+}

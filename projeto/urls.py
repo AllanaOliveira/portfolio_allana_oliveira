@@ -22,6 +22,8 @@ from projeto import views, settings
 urlpatterns = [
     path('', views.index, name="index"),
     path('pais/', include('pais.urls')),
+    path('conquista/', include('conquista.urls')),
+    path('palavra_vida/', include('palavra_vida.urls')),
     path('admin/', admin.site.urls),
 ]
 
