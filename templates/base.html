@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/all.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/template.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="shortcut icon" href="{% static 'images/favicon.jpg' %}" />
 
     {% block link %}
 
@@ -27,59 +28,59 @@
     <script src="{% static 'js/template.js' %}"></script>
 </head>
 <body>
-<nav class="navbar navbar-light bg-light navbar-expand-md fixed-top cabecalho">
-        <a class="nav-link nav-item d-flex justify-content-center" href="/" target="_blank"><i class="fas fa-door-open"></i></a>
+    <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top cabecalho">
+        <a class="nav-link nav-item d-flex justify-content-center" href="{% url 'index' %}"><i class="fas fa-door-open"></i></a>
 
-          <div class="navbar-nav mr-auto esquerda d-none d-md-block">
-              <a class="d-none d-md-block nav-link nav-item" href="https://wa.me/5521996667273" target="_blank"><i class="far fa-comments"></i> Entre em contato!</a>
-          </div>
-          <div class="navbar-nav esquerda mr-auto d-block d-md-none">
-              <a class="d-block d-md-none nav-link nav-item" href="https://wa.me/5521996667273" target="_blank"><i class="far fa-comments fa-2x"></i></a>
-          </div>
+        <div class="navbar-nav mr-auto esquerda d-none d-md-block">
+            <a class="d-none d-md-block nav-link nav-item" href="https://wa.me/5521996667273" target="_blank"><i class="far fa-comments"></i> Entre em contato!</a>
+        </div>
+        <div class="navbar-nav esquerda mr-auto d-block d-md-none">
+            <a class="d-block d-md-none nav-link nav-item" href="https://wa.me/5521996667273" target="_blank"><i class="far fa-comments fa-2x"></i></a>
+        </div>
 
-            <div class="navbar-nav mr-auto direita">
-              <div class="row">
+        <div class="navbar-nav mr-auto direita">
+            <div class="row">
                 <a class="nav-link nav-item d-flex justify-content-center small mr-2" href="https://www.instagram.com/oliveira_allana/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
                 <a class="nav-link nav-item d-flex justify-content-center small mr-2" href="https://www.facebook.com/Allana.C.deoliveira" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
                 <a class="nav-link nav-item d-flex justify-content-center small mr-2" href="https://www.youtube.com/user/AllaanaGodislove" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
             </div>
-            </div>
-            <div class="navbar-nav">
-                <a class="d-none d-md-block nav-link nav-item hastag" href="#"><i class="fas fa-hashtag"></i><span>juntospelomundo</span></a>
-            </div>
-      </nav>
+        </div>
 
- <main class="principal">
+        <div class="navbar-nav">
+            <a class="d-none d-md-block nav-link nav-item hastag" href="{% url 'palavra_vida:index' %}"><i class="fas fa-hashtag"></i><span>juntospelomundo</span></a>
+        </div>
+    </nav>
 
-    {% block corpo %}
+    <main class="principal">
+        {% block corpo %}
 
-    {% endblock %}
- </main>
+        {% endblock %}
+    </main>
 
     <footer class="rodape">
-    <div class="text-center py-3">
-      <p>Allana Capistrano de Oliveira</p>
-      <p>CPF: 148.264.797-43</p>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col text-center">
-          <p>Banco do Brasil</p>
-          <p>Agência: 0000</p>
-          <p>Conta</p>
+        <div class="text-center py-3">
+            <p>Allana Capistrano de Oliveira</p>
+            <p>CPF: 148.264.797-43</p>
         </div>
-        <div class="col text-center">
-          <p>Banco Itaú</p>
-          <p>Agência: 0000</p>
-          <p>Conta</p>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p>Banco do Brasil</p>
+                    <p>Agência: 0000</p>
+                    <p>Conta</p>
+                </div>
+                <div class="col text-center">
+                    <p>Banco Itaú</p>
+                    <p>Agência: 0000</p>
+                    <p>Conta</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <hr style="border-color: #7bac3b;">
-    <div class="footer-copyright text-center py-3">
-      <p><i class="far fa-copyright"></i> Allana Capistrano de Oliveira 2020</p>
-      <p><i class="fas fa-globe-americas"></i> Todos os direitos reservados</p>
-    </div>
-  </footer>
+        <hr style="border-color: #7bac3b;">
+        <div class="footer-copyright text-center py-3">
+          <p><i class="far fa-copyright"></i> Allana Capistrano de Oliveira 2020</p>
+          <p><i class="fas fa-globe-americas"></i> Todos os direitos reservados</p>
+        </div>
+    </footer>
 </body>
 </html>
