@@ -73,11 +73,11 @@ footer p {
 }
 
 .ciencia_da_computacao img{
-    width: 150px;
+    width: 250px;
 }
 
 .missoes img{
-    width: 150px;
+    width: 250px;
 }
 
 .img_computacao {
@@ -87,9 +87,16 @@ footer p {
 
 .text_menu {
     display: table-cell;
-    float: left;
-    width: 300px;
+    width: 400px;
     margin-top: 50px;
+}
+
+.missao {
+    float: left;
+}
+
+.computacao {
+    float: right;
 }
 
 .img_mapa {
